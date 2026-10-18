@@ -50,8 +50,12 @@ const BlogPostDetail: React.FC = () => {
                 cursor: "pointer",
                 transition: "background-color 0.3s",
               }}
-              onMouseOver={(e) => (e.target.style.backgroundColor = "#e56500")}
-              onMouseOut={(e) => (e.target.style.backgroundColor = "#ff7f00")}
+              onMouseOver={(e) =>
+                (e.currentTarget.style.backgroundColor = "#e56500")
+              }
+              onMouseOut={(e) =>
+                (e.currentTarget.style.backgroundColor = "#ff7f00")
+              }
             >
               Volver al inicio
             </button>

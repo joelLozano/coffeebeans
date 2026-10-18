@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
-import { teamMembers, TeamMember } from "../data/teamData";
+import { teamMembers } from "../data/teamData";
+import type { TeamMember } from "../data/teamData";
 import "./AboutPage.css";
 
 const AboutPage: React.FC = () => {
