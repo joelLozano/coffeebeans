@@ -1,0 +1,221 @@
+/* Contact Page Styles */
+
+.contact-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-main {
+  flex: 1;
+}
+
+/* Hero */
+.contact-hero {
+  background: var(--primary-black);
+  color: var(--white);
+  padding: calc(var(--spacing-2xl) + 4rem) 0 var(--spacing-2xl);
+  text-align: center;
+}
+
+.contact-hero__title {
+  color: var(--white);
+  margin-bottom: var(--spacing-md);
+}
+
+.contact-hero__subtitle {
+  color: var(--light-gray);
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: 1.125rem;
+}
+
+/* Layout */
+.contact-content {
+  background: var(--very-light-gray);
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: var(--spacing-xl);
+  align-items: start;
+}
+
+/* Info sidebar */
+.contact-info {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+}
+
+.contact-info__title {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.contact-info__text {
+  margin-bottom: var(--spacing-lg);
+}
+
+.contact-info__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.contact-info__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+}
+
+.contact-info__icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.contact-info__label {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--light-gray);
+  margin-bottom: 0.125rem;
+}
+
+.contact-info__value {
+  display: block;
+  color: var(--primary-black);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a.contact-info__value:hover {
+  color: var(--primary-orange);
+}
+
+/* Form */
+.contact-form-wrapper {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+  color: var(--primary-black);
+  font-size: 0.95rem;
+}
+
+.form-group .required {
+  color: var(--primary-orange);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem var(--spacing-sm);
+  border: 1px solid #d1d1d1;
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--primary-black);
+  background: var(--white);
+  transition: border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-orange);
+  box-shadow: 0 0 0 3px rgba(255, 127, 0, 0.15);
+}
+
+.form-group input[aria-invalid="true"],
+.form-group textarea[aria-invalid="true"] {
+  border-color: #e03131;
+}
+
+.form-error {
+  color: #e03131;
+  font-size: 0.85rem;
+  margin-top: 0.375rem;
+}
+
+.submit-btn {
+  margin-top: var(--spacing-xs);
+  align-self: flex-start;
+}
+
+/* Success state */
+.contact-success {
+  text-align: center;
+  padding: var(--spacing-lg) 0;
+}
+
+.contact-success__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    var(--primary-orange),
+    var(--secondary-orange)
+  );
+  color: var(--white);
+  font-size: 2rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.contact-success__title {
+  margin-bottom: var(--spacing-sm);
+}
+
+.contact-success__text {
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
