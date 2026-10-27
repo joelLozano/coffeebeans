@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
+import { PAGES } from "../seo/site";
+import { usePageMeta } from "../seo/usePageMeta";
 import "./ContactPage.css";
 
 interface FormData {
@@ -33,6 +35,7 @@ const serviceOptions = [
 ];
 
 const ContactPage: React.FC = () => {
+  usePageMeta(PAGES.contacto);
   const [searchParams] = useSearchParams();
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>(

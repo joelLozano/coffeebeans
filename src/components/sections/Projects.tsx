@@ -17,14 +17,12 @@ interface Project {
 
 interface ProjectCardProps {
   project: Project;
-  index: number;
   categories: { id: string; label: string }[];
   onSelectProject: (project: Project) => void;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   project,
-  index,
   categories,
   onSelectProject,
 }) => {
@@ -33,42 +31,55 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     triggerOnce: true,
   });
 
+  const categoryLabel = categories.find(
+    (cat) => cat.id === project.category
+  )?.label;
+
   return (
-    <div
+    <article
       ref={ref}
       className={`project-card ${hasBeenVisible ? "visible" : ""}`}
-      style={{ animationDelay: `${index * 0.1}s` }}
       onClick={() => onSelectProject(project)}
     >
       <div className="project-card__image">
-        <div className="project-icon">{project.image}</div>
-        <div className="project-overlay">
-          <span className="view-project">Ver Proyecto</span>
+        <div className="project-meta">
+          <span className="project-category">{categoryLabel}</span>
+          <span className="project-year">{project.year}</span>
+        </div>
+        <div className="project-icon" aria-hidden="true">
+          {project.image}
         </div>
       </div>
 
       <div className="project-card__content">
-        <div className="project-meta">
-          <span className="project-category">
-            {categories.find((cat) => cat.id === project.category)?.label}
-          </span>
-          <span className="project-year">{project.year}</span>
-        </div>
         <h3 className="project-title">{project.title}</h3>
         <p className="project-description">{project.description}</p>
 
         <div className="project-tech">
-          {project.tech.slice(0, 2).map((tech, techIndex) => (
-            <span key={techIndex} className="tech-tag">
+          {project.tech.slice(0, 3).map((tech) => (
+            <span key={tech} className="tech-tag">
               {tech}
             </span>
           ))}
-          {project.tech.length > 2 && (
-            <span className="tech-more">+{project.tech.length - 2} más</span>
+          {project.tech.length > 3 && (
+            <span className="tech-more">+{project.tech.length - 3}</span>
           )}
         </div>
+
+        <div className="project-card__footer">
+          <button
+            type="button"
+            className="project-card__link"
+            aria-label={`Ver detalles del proyecto ${project.title}`}
+          >
+            Ver proyecto
+            <span className="project-card__arrow" aria-hidden="true">
+              →
+            </span>
+          </button>
+        </div>
       </div>
-    </div>
+    </article>
   );
 };
 
@@ -241,11 +252,10 @@ const Projects: React.FC = () => {
 
         {/* Projects Grid */}
         <div className="projects__grid">
-          {filteredProjects.map((project, index) => (
+          {filteredProjects.map((project) => (
             <ProjectCard
               key={project.id}
               project={project}
-              index={index}
               categories={categories}
               onSelectProject={setSelectedProject}
             />

@@ -26,40 +26,59 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
     triggerOnce: true,
   });
 
+  const number = String(index + 1).padStart(2, "0");
+
   return (
-    <div
+    <article
       ref={ref}
       className={`service-card ${hasBeenVisible ? "visible" : ""}`}
-      style={{ animationDelay: `${index * 0.1}s` }}
     >
-      <div className="service-card__icon">
-        <span className="icon">{service.icon}</span>
-        <div className="icon-bg"></div>
+      <div className="service-card__top">
+        <div className="service-card__icon" aria-hidden="true">
+          {service.icon}
+        </div>
+        <span className="service-card__number" aria-hidden="true">
+          {number}
+        </span>
       </div>
 
-      <div className="service-card__content">
-        <h3 className="service-card__title">{service.title}</h3>
-        <p className="service-card__description">{service.description}</p>
+      <h3 className="service-card__title">{service.title}</h3>
+      <p className="service-card__description">{service.description}</p>
 
-        <ul className="service-card__features">
-          {service.features.map((feature, featureIndex) => (
-            <li key={featureIndex} className="feature-item">
-              <span className="feature-check">✓</span>
-              {feature}
-            </li>
-          ))}
-        </ul>
-      </div>
+      <ul className="service-card__features">
+        {service.features.map((feature) => (
+          <li key={feature} className="feature-item">
+            <span className="feature-check" aria-hidden="true">
+              <svg viewBox="0 0 16 16" width="10" height="10">
+                <path
+                  d="M3 8.5l3 3 7-7"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </span>
+            {feature}
+          </li>
+        ))}
+      </ul>
 
-      <div className="service-card__action">
+      <div className="service-card__footer">
         <button
-          className="btn btn-secondary service-btn"
+          type="button"
+          className="service-card__link"
           onClick={() => onMoreInfo(service.title)}
+          aria-label={`Cotizar ${service.title}`}
         >
-          Más Información
+          Cotizar este servicio
+          <span className="service-card__arrow" aria-hidden="true">
+            →
+          </span>
         </button>
       </div>
-    </div>
+    </article>
   );
 };
 
