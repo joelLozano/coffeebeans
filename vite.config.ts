@@ -123,5 +123,5 @@ const seoPagesPlugin = (): Plugin => {
 // debe ser el nombre del repositorio (no la URL completa de GitHub).
 export default defineConfig({
   plugins: [react(), seoPagesPlugin()],
-  base: '/coffeebeans/',
+  base: '/',
 })
