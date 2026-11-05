@@ -51,12 +51,14 @@ const Hero: React.FC = () => {
               >
                 Ver Servicios
               </button>
+              {/* Portfolio desactivado temporalmente. Descomentar para reactivarlo.
               <button
                 onClick={() => scrollToSection("proyectos")}
                 className="btn btn-secondary hero__btn"
               >
                 Ver Portfolio
               </button>
+              */}
             </div>
           </div>
 

@@ -3,8 +3,9 @@ import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import Hero from "../components/sections/Hero";
 import Services from "../components/sections/Services";
-import Projects from "../components/sections/Projects";
-import Reviews from "../components/sections/Reviews";
+// Secciones desactivadas temporalmente. Descomentar para reactivarlas.
+// import Projects from "../components/sections/Projects";
+// import Reviews from "../components/sections/Reviews";
 import { PAGES } from "../seo/site";
 import { usePageMeta } from "../seo/usePageMeta";
 // Sección de Blog desactivada temporalmente. Descomentar para reactivar en el futuro.
@@ -19,8 +20,10 @@ const HomePage: React.FC = () => {
       <main>
         <Hero />
         <Services />
+        {/* Secciones desactivadas temporalmente. Descomentar para reactivarlas.
         <Projects />
         <Reviews />
+        */}
         {/* Sección de Blog desactivada temporalmente. Descomentar para reactivar. */}
         {/* <Blog /> */}
       </main>

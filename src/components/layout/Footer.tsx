@@ -68,6 +68,7 @@ const Footer: React.FC = () => {
                     Servicios
                   </button>
                 </li>
+                {/* Secciones desactivadas temporalmente. Descomentar para reactivarlas.
                 <li>
                   <button
                     onClick={() => scrollToSection("proyectos")}
@@ -84,6 +85,7 @@ const Footer: React.FC = () => {
                     Reseñas
                   </button>
                 </li>
+                */}
                 {/* Secciones desactivadas en la página. Descomentar al reactivarlas. */}
                 {/* <li>
                   <button
@@ -165,13 +167,13 @@ const Footer: React.FC = () => {
                 <div className="contact-item">
                   <span className="contact-icon">📞</span>
                   <div className="contact-text">
-                    <p>+52 55 1234 5678</p>
+                    <p>+52 55 2749 8383</p>
                   </div>
                 </div>
                 <div className="contact-item">
                   <span className="contact-icon">✉️</span>
                   <div className="contact-text">
-                    <p>hola@coffeebeans.dev</p>
+                    <p>joel.lozano@coffeebeans.com.mx</p>
                   </div>
                 </div>
                 <div className="contact-item">

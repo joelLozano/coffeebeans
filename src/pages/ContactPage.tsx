@@ -39,7 +39,7 @@ const ContactPage: React.FC = () => {
   const [searchParams] = useSearchParams();
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>(
-    {}
+    {},
   );
   const [submitted, setSubmitted] = useState(false);
 
@@ -63,7 +63,7 @@ const ContactPage: React.FC = () => {
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    >,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -138,10 +138,10 @@ const ContactPage: React.FC = () => {
                     <div>
                       <span className="contact-info__label">Email</span>
                       <a
-                        href="mailto:hola@coffeebeans.dev"
+                        href="mailto:joel.lozano@coffeebeans.com.mx"
                         className="contact-info__value"
                       >
-                        hola@coffeebeans.dev
+                        joel.lozano@coffeebeans.com.mx
                       </a>
                     </div>
                   </li>
@@ -150,10 +150,10 @@ const ContactPage: React.FC = () => {
                     <div>
                       <span className="contact-info__label">Teléfono</span>
                       <a
-                        href="tel:+525512345678"
+                        href="tel:+525527498383"
                         className="contact-info__value"
                       >
-                        +52 55 1234 5678
+                        +52 55 2749 8383
                       </a>
                     </div>
                   </li>
@@ -293,7 +293,10 @@ const ContactPage: React.FC = () => {
                       )}
                     </div>
 
-                    <button type="submit" className="btn btn-primary submit-btn">
+                    <button
+                      type="submit"
+                      className="btn btn-primary submit-btn"
+                    >
                       Enviar solicitud
                     </button>
                   </form>

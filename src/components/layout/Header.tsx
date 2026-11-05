@@ -55,9 +55,9 @@ const Header: React.FC = () => {
   const navigationItems = [
     { id: "home", label: "Home", type: "scroll" },
     { id: "servicios", label: "Servicios", type: "scroll" },
-    { id: "proyectos", label: "Proyectos", type: "scroll" },
-    { id: "resenas", label: "Reseñas", type: "scroll" },
-    // Secciones desactivadas en la página. Descomentar al reactivarlas.
+    // Secciones desactivadas temporalmente. Descomentar para reactivarlas.
+    // { id: "proyectos", label: "Proyectos", type: "scroll" },
+    // { id: "resenas", label: "Reseñas", type: "scroll" },
     // { id: "blog", label: "Blog", type: "scroll" },
     // { id: "tutoriales", label: "Tutoriales", type: "scroll" },
     // { id: "/nosotros", label: "Nosotros", type: "route" },
